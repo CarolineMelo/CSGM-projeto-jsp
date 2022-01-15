@@ -54,9 +54,6 @@
 
 
 
-
-
-
 <%! Calendar cal = Calendar.getInstance();%>
 		
 		<%!int segundos(){
