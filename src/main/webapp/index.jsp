@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -30,6 +31,24 @@
 						   }%></h1>
 
 
+
+<%!int idade = 20; %>
+ 	 
+	<%! int calcularBatimentos(int idade){
+	return 80 * 60 * 24 * 365 * idade;
+	 }%>
+	 
+	 
+<!-- SCRIPTLET -->
+	 <% if (calcularBatimentos(idade) > 50){
+		 out.println("Batimentos normal");
+		 } else {
+		 out.println("Batimentos fora da normalidade");
+		 }%>
+
+<!-- EXPRESSION -->
+ 	 
+<h1>Batimentos cardíacos: <%=calcularBatimentos(idade) %></h1>
 
 </body>
 </html>
