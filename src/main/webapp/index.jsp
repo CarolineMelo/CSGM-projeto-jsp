@@ -1,3 +1,4 @@
+<%@page import="java.util.Calendar"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -49,6 +50,27 @@
 <!-- EXPRESSION -->
  	 
 <h1>Batimentos cardíacos: <%=calcularBatimentos(idade) %></h1>
+
+
+
+
+
+
+
+<%! Calendar cal = Calendar.getInstance();%>
+		
+		<%!int segundos(){
+			return cal.get(Calendar.SECOND);
+		}%>
+		
+		<%!String par = "par";%>
+		<%!String impar = "impar";%>
+<%if(segundos() % 2 == 0){
+			out.println(par);
+		}else{
+			out.println(impar);
+		}%>
+<h1>São <%=segundos()%> segundos</h1>
 
 </body>
 </html>
